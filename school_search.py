@@ -59,7 +59,7 @@ def search_schools(query):
             tokenized_city = city.split()
 
             school_min_distance = min([levenshtein_distance(token, t) for t in tokenized_school]) * 0.5
-            city_min_distance = min([levenshtein_distance(token, t) for t in tokenized_city]) 
+            city_min_distance = min([levenshtein_distance(token, t) for t in tokenized_city]) * 0.5
 
             # Accumulate the Levenshtein scores for school and city
             levenshtein_score += school_min_distance + city_min_distance
